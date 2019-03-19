@@ -17,7 +17,7 @@ class randamizeActivity : AppCompatActivity() {
 
         val ViewModel =ViewModelProviders.of(this).get(RandamizeViewModel::class.java)
         incementer_button.setOnClickListener {
-            ViewModel.randomValue
+            ViewModel.increamentNumber ()
         }
 
         ViewModel.randomValue.observe(this,

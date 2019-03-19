@@ -6,7 +6,7 @@ import com.example.usercases.Ticker
 import com.example.usercases.numberIncrementer
 
 
-private const val DEFUALT_VALUE = 0
+ const val DEFUALT_VALUE = 0
 private const val INCREMENT_BY_VALUE = 1
 
 
@@ -18,7 +18,7 @@ class RandamizeViewModel  : ViewModel() {
 
 
     init {
-        randomValue.value = 1
+        randomValue.value = DEFUALT_VALUE
       //  ticker.start()
 
     }
@@ -37,11 +37,11 @@ class RandamizeViewModel  : ViewModel() {
     }
 */
 
-    override fun onCleared (){
+   /* override fun onCleared (){
         super.onCleared()
        // ticker.onFinish()
     }
-
+*/
 
 
 
