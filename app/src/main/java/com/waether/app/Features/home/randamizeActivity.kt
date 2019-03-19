@@ -16,6 +16,9 @@ class randamizeActivity : AppCompatActivity() {
         //
 
         val ViewModel =ViewModelProviders.of(this).get(RandamizeViewModel::class.java)
+        incementer_button.setOnClickListener {
+            ViewModel.randomValue
+        }
 
         ViewModel.randomValue.observe(this,
             Observer { randamize_Activity_Textview.text =it.toString() }
