@@ -20,6 +20,11 @@ class randamizeActivity : AppCompatActivity() {
             ViewModel.increamentNumber ()
         }
 
+
+        clicked_button.setOnClickListener {
+
+        }
+
         ViewModel.randomValue.observe(this,
             Observer { randamize_Activity_Textview.text =it.toString() }
             )
