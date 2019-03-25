@@ -1,4 +1,4 @@
-package com.example.usercases
+package com.example.domain
 
 import android.app.Application
 import android.arch.lifecycle.MutableLiveData

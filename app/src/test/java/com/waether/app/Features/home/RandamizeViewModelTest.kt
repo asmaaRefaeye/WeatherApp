@@ -1,9 +1,9 @@
 package com.waether.app.Features.home
 
 import android.arch.core.executor.testing.InstantTaskExecutorRule
-import android.arch.lifecycle.ViewModel
+import com.waether.app.Features.randomizer.DEFUALT_VALUE
+import com.waether.app.Features.randomizer.RandamizeViewModel
 import org.junit.Assert
-import org.junit.Assert.*
 import org.junit.Rule
 import org.junit.Test
 
@@ -23,7 +23,7 @@ class RandamizeViewModelTest {
         //Arrange
 
         //Act
-        val ViewModel =RandamizeViewModel()
+        val ViewModel = RandamizeViewModel()
 
         //Assert
         val result =ViewModel.randomValue.value
@@ -34,7 +34,7 @@ class RandamizeViewModelTest {
     @Test
     fun `increment Number When Number Live data Value Is Zero Then Update Number Live data To one`(){
         //Arrange
-        val ViewModel =RandamizeViewModel()
+        val ViewModel = RandamizeViewModel()
         ViewModel.randomValue.value= DEFUALT_VALUE
 
         //Act

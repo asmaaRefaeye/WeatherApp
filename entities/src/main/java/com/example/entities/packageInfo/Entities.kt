@@ -7,7 +7,8 @@ import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 @Entity
-data class FavoriteCityId(@field:PrimaryKey  val id: Long)
+data class FavoriteCityId(
+    @field:PrimaryKey  val id: Long)
 
 @Entity
 data class City(

@@ -1,7 +1,7 @@
 package com.waether.app
 
 import android.app.Application
-import com.example.usercases.Integration
+import com.example.domain.Integration
 
 class weatherApplication : Application (){
 

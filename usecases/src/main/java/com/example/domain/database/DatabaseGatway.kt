@@ -1,4 +1,4 @@
-package com.example.usercases.database
+package com.example.domain.database
 
 import android.arch.persistence.room.TypeConverter
 import com.example.entities.packageInfo.Coordinates
