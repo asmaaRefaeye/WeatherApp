@@ -8,7 +8,8 @@ import java.io.Serializable
 
 @Entity
 data class FavoriteCityId(
-    @field:PrimaryKey  val id: Long)
+    @field:PrimaryKey val id: Long
+)
 
 @Entity
 data class City(
@@ -17,17 +18,20 @@ data class City(
     @field:SerializedName("id") val id: Long,
     @field:SerializedName("name") val name: String?,
     @field:SerializedName("country") val country: String?,
-    @field:SerializedName("coord") val coordinates: Coordinates?)
+    @field:SerializedName("coord") val coordinates: Coordinates?
+) : Serializable
 
 data class Wind(
     @field:SerializedName("deg") val degree: Double?,
-    @field:SerializedName("speed") val speed: Double?)
+    @field:SerializedName("speed") val speed: Double?
+)
 
 data class Weather(
     @field:SerializedName("description") val description: String?,
     @field:SerializedName("icon") val icon: String?,
     @field:SerializedName("id") val id: Long?,
-    @field:SerializedName("main") var state: String?)
+    @field:SerializedName("main") var state: String?
+)
 
 data class Snow(@field:SerializedName("3h") val volumeForLastThreeHours: Double?) : Serializable
 
@@ -35,7 +39,8 @@ data class Clouds(@field:SerializedName("all") val cloudiness: Long?) : Serializ
 
 data class Coordinates(
     @field:SerializedName("lat") val latitude: Double?,
-    @field:SerializedName("lon") val longitude: Double?)
+    @field:SerializedName("lon") val longitude: Double?
+)
 
 data class Forecast(
     @field:SerializedName("clouds") val clouds: Clouds?,
@@ -44,7 +49,8 @@ data class Forecast(
     @field:SerializedName("main") val details: ForecastDetails?,
     @field:SerializedName("snow") val snow: Snow?,
     @field:SerializedName("weather") val weather: List<Weather>?,
-    @field:SerializedName("wind") val wind: Wind?) : Serializable
+    @field:SerializedName("wind") val wind: Wind?
+) : Serializable
 
 data class ForecastDetails(
     @field:SerializedName("grnd_level") val grandLevel: Double?,
@@ -53,12 +59,14 @@ data class ForecastDetails(
     @field:SerializedName("sea_level") val seaLevel: Double?,
     @field:SerializedName("temp") val temperature: Double?,
     @field:SerializedName("temp_max") val maximumTemperature: Double?,
-    @field:SerializedName("temp_min") val minimumTemperature: Double?)
+    @field:SerializedName("temp_min") val minimumTemperature: Double?
+)
 
 data class ForecastsResponse(
     @field:SerializedName("city") val city: City?,
     @field:SerializedName("cnt") val count: Long?,
-    @field:SerializedName("list") val forecasts: List<Forecast>?)
+    @field:SerializedName("list") val forecasts: List<Forecast>?
+)
 
 data class ForecastSummery(
     val dateText: String? = null,
@@ -66,4 +74,5 @@ data class ForecastSummery(
     val humidity: String? = null,
     val temperature: String? = null,
     val weather: String? = null,
-    val windSpeed: String? = null)
+    val windSpeed: String? = null
+)

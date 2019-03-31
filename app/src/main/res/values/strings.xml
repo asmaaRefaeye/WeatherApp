@@ -3,4 +3,5 @@
     <string name="city_name">cityName</string>
     <string name="search">searchButton</string>
     <string name="favorites">favouritButton</string>
+    <string name="show">showButton</string>
 </resources>

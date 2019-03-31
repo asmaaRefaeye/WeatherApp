@@ -15,8 +15,8 @@ class FragmentOne : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val activityViewModel = ViewModelProviders.of(activity!!).get(ActivityViewModel::class.java)
-        val myViewModel = ViewModelProviders.of(this).get(FragmentOneViewModel::class.java)
+      /*  val activityViewModel = ViewModelProviders.of(activity!!).get(ActivityViewModel::class.java)*/
+       /* val myViewModel = ViewModelProviders.of(this).get(FragmentOneViewModel::class.java)*/
         activity?.sendBroadcast(Intent(ACTION_BUTTON_CLICK))
     }
 }
@@ -33,8 +33,8 @@ class FragmentTwo : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val activityViewModel = ViewModelProviders.of(activity!!).get(ActivityViewModel::class.java)
-        val myViewModel = ViewModelProviders.of(this).get(FragmentTwoViewModel::class.java)
+       /* val activityViewModel = ViewModelProviders.of(activity!!).get(ActivityViewModel::class.java)
+        val myViewModel = ViewModelProviders.of(this).get(FragmentTwoViewModel::class.java)*/
         activity?.registerReceiver(receiver, IntentFilter(ACTION_BUTTON_CLICK))
     }
 
