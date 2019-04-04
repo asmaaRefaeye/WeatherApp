@@ -22,6 +22,7 @@ fun numberIncrementer(liveData: MutableLiveData<Int>,incementBy:Int=1){
 // if is retrieving, then do not trigger action
 // if all is Ok, trigger action
 
+/*
 
 fun retrieveCitiesByIds(
 
@@ -37,6 +38,7 @@ fun retrieveCitiesByIds(
         ?.also { result.postValue(it) }
         ?.also { retrieving.postValue(false) }
 }
+*/
 
 
 

@@ -45,6 +45,7 @@ class HomeScreen : AppCompatActivity() {
                 search_progress_bar.visibility = if (it!!) View.VISIBLE else View.GONE
             })
 
+            // sending retrieving data using subjectpublish in RXJAva
             viewModel.showCityForecast
                 .debounce(500, TimeUnit.MILLISECONDS)
                 .observeOn(AndroidSchedulers.mainThread())

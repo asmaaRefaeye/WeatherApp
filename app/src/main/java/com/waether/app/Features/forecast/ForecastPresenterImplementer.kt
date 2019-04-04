@@ -1,28 +1,27 @@
 package com.waether.app.Features.forecast
 
 import android.arch.lifecycle.LifecycleOwner
+import com.example.domain.usecase.showcityforcastUsecase
 import com.example.entities.packageInfo.City
+import com.example.entities.packageInfo.FavoriteCityId
+import com.example.entities.packageInfo.Forecast
 
 
-class ForecastPresenterImplementer(private val view: ForecastView) : ForecastPresenter {
+class ForecastPresenterImplementer ( private val view : ForcastView ) : Forecastpresenter {
+    override fun intializeView(city: City) {
 
-    var city : City? = null
-
-    override fun initializeCity(city: City) {
-        this.city = city
     }
 
-    /*override fun onCreate(owner: LifecycleOwner) {
-        ShowCityForecastUseCase().invoke(city?.id!!)
-    }*/
+    override fun addcitytofavourit() {
 
-    override fun addCityToFavoritesClicked() {
     }
 
-    override fun removeCityFromFavorites() {
+    override fun removecityfromfavorites() {
+
     }
 
-    override fun onDestroy(owner: LifecycleOwner) {
-        city = null
-    }
+
 }
+
+
+

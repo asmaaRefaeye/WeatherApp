@@ -23,13 +23,14 @@ class HomeViewModel(
     )
 ) : ViewModel() {
 
-
+    
     fun onSearchButtonClicked(cityName: String?) {
-        Observable.fromCallable { searchCityByName(cityName) }
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe()
-            .also { disposables.add(it) }
+       Observable.fromCallable { searchCityByName(cityName) }
+           .subscribeOn(Schedulers.io())
+           .observeOn(AndroidSchedulers.mainThread())
+           .subscribe()
+           .also { disposables.add(it) }
+
     }
 
     override fun onCleared() {
