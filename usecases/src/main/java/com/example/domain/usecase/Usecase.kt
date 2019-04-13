@@ -3,7 +3,7 @@ package com.example.domain.usecase
 import android.arch.lifecycle.MutableLiveData
 import com.example.entities.packageInfo.City
 import com.example.domain.repositories.citiesReositries
-import com.example.domain.repositories.citiesReposotiry
+import com.example.domain.repositories.CitiesReposotiry
 
 fun numberIncrementer(liveData: MutableLiveData<Int>,incementBy:Int=1){
 

@@ -39,9 +39,9 @@ class SampleActivity : FragmentActivity() {
         val viewModel = ViewModelProviders.of(this).get(RandomizerViewModel::class.java)
 
         viewModel.numberLiveData.observe(this,
-            Observer { randamize_Activity_Textview.text = it.toString() })
+            Observer { random_number_textView.text = it.toString() })
 
-        incementer_button.setOnClickListener {
+        increment_button.setOnClickListener {
             viewModel.incrementNumber()
         }
     }

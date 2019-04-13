@@ -5,7 +5,7 @@ import android.arch.lifecycle.MutableLiveData
 
 internal val applicationLiveData = MutableLiveData<Application>()
 
- fun MutableLiveData<Application>.getApplication() = value!!
+internal fun MutableLiveData<Application>.getApplication()= value!!
 
 object Domain {
 

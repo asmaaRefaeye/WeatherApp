@@ -25,25 +25,26 @@ import kotlinx.android.synthetic.main.fragment_home.*
 import java.util.concurrent.TimeUnit
 import java.io.Serializable
 
-@ContentViewId(R.layout.fragment_home)
-class HomeScreen : AppCompatActivity() {
+//@ContentViewId(R.layout.fragment_home)
+class HomeActivity : AppCompatActivity() {
 
-    class HomeFragment : Fragment() {
-        private val viewModel by lazy { ViewModelProviders.of(this).get(HomeViewModel::class.java) }
-        private val disposables = CompositeDisposable()
+    private val viewModel by lazy { ViewModelProviders.of(this).get(HomeViewModel::class.java) }
+    private val disposables = CompositeDisposable()
 
-        private val showButtonReceiver = object : BroadcastReceiver() {
-            override fun onReceive(context: Context?, intent: Intent?) {
-                viewModel.showCityForecast.onNext(intent!!.getSerializableExtra(EXTRA_CITY))
-            }
+    private val showButtonReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            viewModel.showCityForecast.onNext(intent!!.getSerializableExtra(EXTRA_CITY))
         }
 
+        }
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
+            setContentView(R.layout.fragment_home)
 
-            viewModel.searchProgress.observe(this, Observer {
-                search_progress_bar.visibility = if (it!!) View.VISIBLE else View.GONE
+            viewModel.getProgressLiveData().observe(this, Observer {
+                search_progress_bar.visibility = if(it!!) View.VISIBLE else View.GONE
             })
+
 
             // sending retrieving data using subjectpublish in RXJAva
             viewModel.showCityForecast
@@ -51,29 +52,27 @@ class HomeScreen : AppCompatActivity() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { startForecastScreen(it) }
                 .also { disposables.add(it) }
-
-            search_button.setOnClickListener {
+                search_button.setOnClickListener {
                 viewModel.onSearchButtonClicked(search_edit_text.text?.toString())
             }
 
 
-            results_recycler_view.layoutManager = LinearLayoutManager(this.activity)
+            results_recycler_view.layoutManager = LinearLayoutManager(this)
             results_recycler_view.adapter = CitySearchResultsAdapter(this, viewModel.citiesResult)
 
-            activity?.registerReceiver(showButtonReceiver, IntentFilter(ACTION_SHOW_CITY_BUTTON_CLICKED))
+            registerReceiver(showButtonReceiver, IntentFilter(ACTION_SHOW_CITY_BUTTON_CLICKED))
         }
 
         private fun startForecastScreen(citySerializable: Serializable) {
-            Intent(context, ForecastActivity::class.java)
+            Intent(this@HomeActivity, ForecastActivity::class.java)
                 .putExtra(EXTRA_CITY, citySerializable)
                 .also { startActivity(it) }
         }
 
         override fun onDestroy() {
-            activity?.unregisterReceiver(showButtonReceiver)
+           unregisterReceiver(showButtonReceiver)
             disposables.dispose()
             super.onDestroy()
         }
     }
 
-}

@@ -2,7 +2,7 @@ package com.example.domain.usecase
 
 import android.arch.lifecycle.MutableLiveData
 import com.example.domain.repositories.citiesReositries
-import com.example.domain.repositories.citiesReposotiry
+import com.example.domain.repositories.CitiesReposotiry
 import com.example.entities.packageInfo.City
 
 // usecase 3 : retrieve cities by Ids
@@ -13,7 +13,7 @@ import com.example.entities.packageInfo.City
 class SearchCitiesByIdsUseCase(
     private val result: MutableLiveData<List<City>>,
     private val searching: MutableLiveData<Boolean>,
-    private val repository: citiesReposotiry = citiesReositries
+    private val repository:CitiesReposotiry = citiesReositries
 ) {
 
     operator fun invoke(citiesIds: List<Long>) {

@@ -1,5 +1,6 @@
 package com.waether.app.Features.home
 
+import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
 import com.example.domain.Engine.toMutableLiveData
@@ -23,7 +24,8 @@ class HomeViewModel(
     )
 ) : ViewModel() {
 
-    
+    fun getProgressLiveData() : LiveData<Boolean> = searchProgress
+
     fun onSearchButtonClicked(cityName: String?) {
        Observable.fromCallable { searchCityByName(cityName) }
            .subscribeOn(Schedulers.io())

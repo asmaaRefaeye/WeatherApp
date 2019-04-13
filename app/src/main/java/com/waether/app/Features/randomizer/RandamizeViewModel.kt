@@ -2,6 +2,7 @@ package com.waether.app.Features.randomizer
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
+import com.example.domain.Engine.Ticker
 import com.example.domain.usecase.numberIncrementer
 
 
@@ -27,20 +28,6 @@ class RandomizerViewModel(
 
 }
 
-   /* private fun initializeTicker(): Ticker {
-
-       return Ticker{
-           val oldValues = randomValue.value ?: DEFUALT_VALUE
-           randomValue.postValue(oldValues + INCREMENT_BY_VALUE)
-    }
-    }
-*/
-
-   /* override fun onCleared (){
-        super.onCleared()
-       // ticker.onFinish()
-    }
-*/
 
 
 

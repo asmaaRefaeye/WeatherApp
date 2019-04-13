@@ -1,8 +1,8 @@
 package com.example.domain.usecase
 
 import android.arch.lifecycle.MutableLiveData
+import com.example.domain.repositories.CitiesReposotiry
 import com.example.domain.repositories.citiesReositries
-import com.example.domain.repositories.citiesReposotiry
 import com.example.entities.packageInfo.City
 
 
@@ -12,7 +12,7 @@ import com.example.entities.packageInfo.City
    class SearchCityByNameUsecase  (
         val searching : MutableLiveData<Boolean>,
         val result: MutableLiveData<List<City>>,
-        val  repository : citiesReposotiry = citiesReositries )
+        val  repository : CitiesReposotiry = citiesReositries )
 
 {
        operator fun invoke  ( cityName: String?) {

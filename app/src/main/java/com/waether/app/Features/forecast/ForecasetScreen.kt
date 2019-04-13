@@ -11,13 +11,14 @@ import com.waether.app.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-@ContentViewId(R.layout.activity_main)
+//@ContentViewId(R.layout.activity_main)
 class ForecastActivity : AppCompatActivity(),ForcastView {
 
     private val presenter : Forecastpresenter by lazy {ForecastPresenterImplementer(this)   }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+       setContentView(R.layout.activity_main)
         val city = intent.getSerializableExtra(EXTRA_CITY) as City
         presenter.intializeView(city)
 

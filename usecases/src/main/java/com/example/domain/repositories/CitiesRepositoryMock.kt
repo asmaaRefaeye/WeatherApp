@@ -3,7 +3,7 @@ package com.example.domain.repositories
 import com.example.entities.packageInfo.City
 import com.example.entities.packageInfo.FavoriteCityId
 
-open class CitiesRepositoryMock : citiesReposotiry {
+open class CitiesRepositoryMock : CitiesReposotiry{
     override fun SearchCityByNames(name: String): List<City> {
         return listOf()
     }

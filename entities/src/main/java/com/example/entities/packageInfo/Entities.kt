@@ -40,7 +40,7 @@ data class Clouds(@field:SerializedName("all") val cloudiness: Long?) : Serializ
 data class Coordinates(
     @field:SerializedName("lat") val latitude: Double?,
     @field:SerializedName("lon") val longitude: Double?
-)
+) : Serializable
 
 data class Forecast(
     @field:SerializedName("clouds") val clouds: Clouds?,
